@@ -15,7 +15,7 @@
   --secondary-color-rgb: 249, 210, 214;
   --border-color: #dfb8bc;
   --border-color-rgb: 223, 184, 188;
-  --spacing: 1rem;
+  --spacing: 2rem;
   --spacing-small: 0.5rem;
   --heading-2: 2.4rem;
   --heading-3: 1.6rem;
@@ -52,9 +52,8 @@ h2 {
   font-size: var(--heading-2);
   margin-bottom: var(--spacing);
   padding-top: var(--spacing);
-  border-top: 1px solid var(--border-color);
   color: var(--primary-color);
-  text-shadow: 0.1rem 0.1rem var(--secondary-color);
+  text-shadow: 0.1rem 0.1rem rgba(#000, 0.6);
 }
 
 h3 {
@@ -129,22 +128,18 @@ header {
 main {
   display: grid;
   grid-template-columns: 1fr;
-  padding-block: var(--spacing);
-  padding-inline: var(--spacing);
-
-  section {
-    // background-color: rgba(#ddd, 0.5);
-    border-radius: 5px;
-    overflow: hidden;
-  }
 
   #hero {
+    padding-inline: var(--spacing);
     padding-block: var(--spacing);
+    picture {
+      overflow: hidden;
+    }
   }
 
   #mission {
     padding-inline: var(--spacing);
-    padding-bottom: var(--spacing);
+    padding-block: var(--spacing);
     background-image: linear-gradient(
         to left bottom,
         rgba(var(--secondary-color-rgb), 0.85),
@@ -152,6 +147,7 @@ main {
       ),
       url(./assets/images/ambulance-intern.jpeg);
     background-size: cover;
+    background-position: center;
 
     .mission-wrapper {
       display: grid;
@@ -176,6 +172,7 @@ main {
   }
 
   #team {
+    padding-inline: var(--spacing);
     padding-block: var(--spacing);
 
     .team-wrapper {
@@ -215,7 +212,7 @@ main {
 
   #services {
     padding-inline: var(--spacing);
-    padding-bottom: var(--spacing);
+    padding-block: var(--spacing);
     background-image: linear-gradient(
         to left bottom,
         rgba(var(--secondary-color-rgb), 0.85),
@@ -223,6 +220,7 @@ main {
       ),
       url(./assets/images/equip.jpeg);
     background-size: cover;
+    background-position: center;
 
     h2 {
       border: none;
