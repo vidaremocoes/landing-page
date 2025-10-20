@@ -132,6 +132,10 @@ main {
     overflow: hidden;
   }
 
+  #hero {
+    padding-block: var(--spacing);
+  }
+
   #mission {
     padding-block: var(--spacing);
 
