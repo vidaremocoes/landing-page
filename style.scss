@@ -84,6 +84,11 @@ a:visited {
   color: #000;
 }
 
+.container {
+  max-width: 430px;
+  margin: 0 auto;
+}
+
 header {
   padding-inline: var(--spacing);
   background-color: rgba(var(--secondary-color-rgb), 0.9);
@@ -196,17 +201,48 @@ main {
   }
 
   #services {
-    padding-block: var(--spacing);
+    padding-inline: var(--spacing);
+    padding-bottom: var(--spacing);
+    background-color: rgba(#000, 0.1);
 
-    .check {
-      svg {
-        width: 2rem;
-      }
+    h2 {
+      border: none;
     }
 
-    .service-item {
+    .service-wrapper {
+      padding-block: var(--spacing);
       display: flex;
-      grid-template-columns: auto;
+      flex-direction: column;
+      gap: var(--spacing);
+
+      .check {
+        svg {
+          width: 3.5rem;
+          fill: var(--primary-color);
+        }
+      }
+
+      .service-item {
+        display: flex;
+        grid-template-columns: auto;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--spacing);
+
+        .title {
+          font-size: var(--heading-3);
+          font-weight: 700;
+        }
+
+        .description {
+          font-size: var(--paragraph);
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--border-color);
+          padding-bottom: var(--spacing);
+        }
+      }
     }
   }
 }
