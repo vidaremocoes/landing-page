@@ -191,7 +191,7 @@ a.contact {
 .whatsapp {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing);
+  gap: var(--spacing-small);
 
   a {
     background-color: var(--wp-color);
@@ -207,11 +207,12 @@ main {
     box-shadow: var(--box-shadow);
     picture {
       overflow: hidden;
+      width: 100%;
     }
   }
 
   #call {
-    padding-inline: var(--spacing);
+    padding-inline: var(--spacing-small);
 
     .call-wrapper {
       padding-bottom: var(--spacing);
