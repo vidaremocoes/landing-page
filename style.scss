@@ -18,22 +18,26 @@
 
   --spacing: 2.5rem;
   --spacing-small: 1rem;
+  --scroll-pt: 2.7rem;
   --border-radius: 0.5rem;
   --box-shadow: 0.5rem 0.5rem 1.2rem rgba(0, 0, 0, 0.5);
-  --section-shadow: 0 1rem 1rem rgba(var(--primary-color-rgb), 0.5);
+  --section-shadow: 0 0.5rem 1.2rem rgba(var(--primary-color-rgb), 0.5);
 
   --heading-2: 2.4rem;
   --heading-3: 1.6rem;
   --paragraph: 1.6rem;
   --line-height: 1.4;
+  --icon-size: 4rem;
 
   @media screen and (min-width: 768px) {
     --spacing: 3rem;
     --spacing-small: 1.5rem;
+    --scroll-pt: 3.9rem;
     --heading-2: 3.6rem;
     --heading-3: 2.4rem;
     --paragraph: 2rem;
     --line-height: 1.6;
+    --icon-size: 7rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -48,11 +52,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--spacing) * 2 + 2.7rem);
-
-  @media screen and (min-width: 768px) {
-    scroll-padding-top: calc(var(--spacing-small) * 2 + 3.9rem);
-  }
+  scroll-padding-top: calc(var(--spacing-small) * 2 + var(--scroll-pt));
 }
 
 body {
@@ -60,21 +60,22 @@ body {
 }
 
 h2 {
+  --shadow: 0.1rem 0.1rem 0.2rem;
   font-size: var(--heading-2);
   margin-bottom: var(--spacing);
   padding-top: var(--spacing);
   color: var(--primary-color);
-  text-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.4);
+  text-shadow: var(--shadow) rgba(0, 0, 0, 0.4);
   text-transform: uppercase;
 
   &.dark {
     color: #000;
-    text-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.7);
+    text-shadow: var(--shadow) rgba(0, 0, 0, 0.7);
   }
 
   &.light {
     color: #fff;
-    text-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.7);
+    text-shadow: var(--shadow) rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -118,12 +119,13 @@ header {
   background-color: rgba(var(--primary-color-rgb), 0.9);
   position: sticky;
   top: 0;
+  background: var(--primary-color);
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-block: var(--spacing);
+    padding-block: var(--spacing-small);
 
     .home {
       svg {
@@ -237,7 +239,7 @@ main {
           margin: 0 auto;
           align-items: center;
           justify-content: center;
-          width: 4rem;
+          width: var(--icon-size);
           border-radius: 50%;
           overflow: hidden;
           padding: 0.8rem;
@@ -264,10 +266,6 @@ main {
     background-size: cover;
     background-position: center;
     box-shadow: var(--section-shadow);
-
-    h2 {
-      border: none;
-    }
 
     .service-wrapper {
       padding-block: var(--spacing);
@@ -361,7 +359,7 @@ main {
         box-shadow: var(--box-shadow);
 
         svg {
-          width: 4rem;
+          width: var(--icon-size);
           fill: var(--primary-color);
         }
       }
