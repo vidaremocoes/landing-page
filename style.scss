@@ -15,33 +15,44 @@
   --secondary-color-rgb: 249, 210, 214;
   --border-color: #dfb8bc;
   --border-color-rgb: 223, 184, 188;
-  --spacing: 2rem;
-  --spacing-small: 0.5rem;
+
+  --spacing: 2.5rem;
+  --spacing-small: 1rem;
+  --border-radius: 0.5rem;
+  --box-shadow: 0.5rem 0.5rem 1.2rem rgba(0, 0, 0, 0.5);
+  --section-shadow: 0 1rem 1rem rgba(var(--primary-color-rgb), 0.5);
+
   --heading-2: 2.4rem;
   --heading-3: 1.6rem;
-  --paragraph: 1.4rem;
+  --paragraph: 1.6rem;
+  --line-height: 1.4;
 
   @media screen and (min-width: 768px) {
-    --spacing: 2rem;
-    --spacing-small: 1rem;
-    --heading-2: 3rem;
-    --heading-3: 2rem;
-    --paragraph: 1.6rem;
-  }
-
-  @media screen and (min-width: 1024px) {
     --spacing: 3rem;
     --spacing-small: 1.5rem;
     --heading-2: 3.6rem;
     --heading-3: 2.4rem;
     --paragraph: 2rem;
+    --line-height: 1.6;
+  }
+
+  @media screen and (min-width: 1024px) {
+    --spacing: 4rem;
+    --spacing-small: 2rem;
+    --heading-2: 4.2rem;
+    --heading-3: 3rem;
+    --paragraph: 2.4rem;
   }
 }
 
 html {
   font-size: 62.5%;
-  line-height: 1.6;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--spacing) * 2 + 2.7rem);
+
+  @media screen and (min-width: 768px) {
+    scroll-padding-top: calc(var(--spacing-small) * 2 + 3.9rem);
+  }
 }
 
 body {
@@ -53,7 +64,18 @@ h2 {
   margin-bottom: var(--spacing);
   padding-top: var(--spacing);
   color: var(--primary-color);
-  text-shadow: 0.1rem 0.1rem rgba(#000, 0.6);
+  text-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+
+  &.dark {
+    color: #000;
+    text-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.7);
+  }
+
+  &.light {
+    color: #fff;
+    text-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.7);
+  }
 }
 
 h3 {
@@ -62,6 +84,7 @@ h3 {
 
 p {
   font-size: var(--paragraph);
+  line-height: var(--line-height);
 }
 
 picture {
@@ -92,7 +115,9 @@ a:visited {
 
 header {
   padding-inline: var(--spacing);
-  background-color: rgba(var(--secondary-color-rgb), 0.9);
+  background-color: rgba(var(--primary-color-rgb), 0.9);
+  position: sticky;
+  top: 0;
 
   nav {
     display: flex;
@@ -102,7 +127,7 @@ header {
 
     .home {
       svg {
-        fill: #000;
+        fill: #fff;
         width: 2.4rem;
         height: 2.4rem;
       }
@@ -116,6 +141,7 @@ header {
       a {
         text-transform: uppercase;
         font-weight: 700;
+        color: #fff;
 
         &:hover {
           text-decoration: underline;
@@ -130,8 +156,6 @@ main {
   grid-template-columns: 1fr;
 
   #hero {
-    padding-inline: var(--spacing);
-    padding-block: var(--spacing);
     picture {
       overflow: hidden;
     }
@@ -142,16 +166,18 @@ main {
     padding-block: var(--spacing);
     background-image: linear-gradient(
         to left bottom,
-        rgba(var(--secondary-color-rgb), 0.85),
-        rgba(var(--border-color-rgb), 0.85)
+        rgba(50, 50, 50, 0.85),
+        rgba(var(--secondary-color-rgb), 0.85)
       ),
       url(./assets/images/ambulance-intern.jpeg);
     background-size: cover;
     background-position: center;
+    box-shadow: var(--section-shadow);
 
     .mission-wrapper {
       display: grid;
       gap: var(--spacing);
+      padding-bottom: var(--spacing);
 
       .info {
         display: flex;
@@ -159,14 +185,24 @@ main {
         gap: var(--spacing);
         background-color: rgba(white, 0.7);
         padding: var(--spacing);
-        border-radius: var(--spacing-small);
+        border-radius: var(--border-radius);
         p {
           font-size: var(--paragraph);
         }
       }
 
-      img {
-        border-radius: 0.5rem;
+      div {
+        box-shadow: var(--box-shadow);
+      }
+
+      .pic {
+        display: flex;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+
+        img {
+          object-fit: cover;
+        }
       }
     }
   }
@@ -174,11 +210,16 @@ main {
   #team {
     padding-inline: var(--spacing);
     padding-block: var(--spacing);
+    background-image: linear-gradient(
+      to left bottom,
+      rgba(var(--primary-color), 0.85),
+      rgba(var(--secondary-color-rgb), 0.85)
+    );
 
     .team-wrapper {
       display: grid;
       gap: var(--spacing);
-      padding-block: var(--spacing);
+      padding-bottom: var(--spacing);
 
       .card {
         display: flex;
@@ -187,8 +228,9 @@ main {
         gap: var(--spacing-small);
         border: 0.2rem solid var(--border-color);
         padding: var(--spacing);
-        border-radius: 0.5rem;
+        border-radius: var(--border-radius);
         background-color: var(--secondary-color);
+        box-shadow: var(--box-shadow);
 
         .icon {
           display: flex;
@@ -221,6 +263,7 @@ main {
       url(./assets/images/equip.jpeg);
     background-size: cover;
     background-position: center;
+    box-shadow: var(--section-shadow);
 
     h2 {
       border: none;
@@ -229,11 +272,13 @@ main {
     .service-wrapper {
       padding-block: var(--spacing);
       padding-inline: var(--spacing);
+      margin-bottom: var(--spacing);
       background-color: rgba(white, 0.7);
-      border-radius: var(--spacing);
+      border-radius: var(--border-radius);
       display: flex;
       flex-direction: column;
       gap: var(--spacing);
+      box-shadow: var(--box-shadow);
 
       .check {
         svg {
@@ -265,6 +310,69 @@ main {
       }
     }
   }
+
+  #structure {
+    padding-block: var(--spacing);
+    padding-inline: var(--spacing);
+
+    .structure-wrapper {
+      display: grid;
+      gap: var(--spacing);
+      padding-bottom: var(--spacing);
+
+      .card {
+        border-radius: var(--border-radius);
+        border: 2px solid var(--border-color);
+        border-left: 1rem solid var(--primary-color);
+        padding: var(--spacing);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-small);
+        box-shadow: var(--box-shadow);
+      }
+    }
+  }
+
+  #choose {
+    padding-inline: var(--spacing);
+    padding-block: var(--spacing);
+    background-image: linear-gradient(
+        to left bottom,
+        rgba(var(--secondary-color-rgb), 0.85),
+        rgba(var(--border-color-rgb), 0.85)
+      ),
+      url(./assets/images/ambulances.jpeg);
+    background-size: cover;
+    background-position: center;
+
+    .choose-wrapper {
+      display: grid;
+      gap: var(--spacing);
+      padding-bottom: var(--spacing);
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-small);
+        background-color: rgba(white, 0.7);
+        border-radius: var(--border-radius);
+        padding-block: var(--spacing);
+        padding-inline: var(--spacing);
+        box-shadow: var(--box-shadow);
+
+        svg {
+          width: 4rem;
+          fill: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: var(--primary-color);
+  padding-inline: var(--spacing);
+  padding-block: var(--spacing);
 }
 
 @media screen and (max-width: 768px) {
@@ -325,15 +433,15 @@ main {
 
     #services {
       .service-wrapper {
-        border-radius: var(--spacing-small);
+        border-radius: var(--border-radius);
       }
     }
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .container {
-    max-width: 100rem;
+    max-width: 99rem;
   }
 
   header {
@@ -367,5 +475,23 @@ main {
         }
       }
     }
+
+    #structure {
+      .structure-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    #choose {
+      .choose-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 118rem;
   }
 }

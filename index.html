@@ -27,30 +27,29 @@
           </svg>
         </a>
         <ul role="list" class="menu">
-          <li><a href="#mission">Missão</a></li>
+          <li><a href="#mission-nav">Missão</a></li>
           <li><a href="#team">Equipe</a></li>
           <li><a href="#services">Serviços</a></li>
+          <li><a href="#structure">Estrutura</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
       <section id="hero" class="">
-        <div class="container">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="assets/images/hero-lg.jpeg"
-            />
-            <img
-              src="assets/images/hero-sm.jpeg"
-              alt="Descrição do hero image"
-            />
-          </picture>
-        </div>
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcset="assets/images/hero_v2.jpeg"
+          />
+          <img src="assets/images/hero_v2.jpeg" alt="Descrição do hero image" />
+        </picture>
       </section>
+
+      <span id="mission-nav"></span>
       <section id="mission">
         <div class="container">
-          <h2>Nossa Missão e Compromisso</h2>
+          <h2 class="light">Nossa Missão e Compromisso</h2>
           <div class="mission-wrapper">
             <div class="info">
               <p>
@@ -65,10 +64,13 @@
                 hospitalares, clínicas, residências e longas distâncias.
               </p>
             </div>
-            <img src="./assets/images/mission.jpg" class="hidden-xs" alt="" />
+            <div class="pic">
+              <img src="./assets/images/mission.jpg" class="hidden-xs" alt="" />
+            </div>
           </div>
         </div>
       </section>
+
       <section id="team">
         <div class="container">
           <h2>Equipe Altamente Qualificada</h2>
@@ -130,9 +132,10 @@
           </div>
         </div>
       </section>
+
       <section id="services">
         <div class="container">
-          <h2>Serviços completos</h2>
+          <h2 class="dark">Serviços completos</h2>
           <div class="service-wrapper">
             <div class="service-item">
               <div class="check">
@@ -237,13 +240,114 @@
           </div>
         </div>
       </section>
-      <!-- <section id="structure">
-        <div>A</div>
-        <div>B</div>
-        <div>C</div>
-        <div>D</div>
-      </section> -->
+
+      <section id="structure">
+        <div class="container">
+          <h2>Estrutura e Tecnologia</h2>
+          <div class="structure-wrapper">
+            <div class="card">
+              <h3>Frota Moderna</h3>
+              <p>
+                Ambulâncias novas e equipadas com tecnologia de ponta para
+                suporte avançado de vida
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Manutenção Rigorosa</h3>
+              <p>
+                Revisões periódicas e preventivas garantindo máxima segurança e
+                confiabilidade;
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Conformidade Total</h3>
+              <p>
+                Seguimos todos os protocolos exigidos pela Vigilância Sanitária
+                e ANVISA
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Conforto e Segurança</h3>
+              <p>
+                Cada unidade preparada para oferecer ambiente adequado durante
+                todo o trajeto
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="choose">
+        <div class="container">
+          <h2 class="light">Por Que Escolher a Vida Remoções 24h?</h2>
+          <div class="choose-wrapper">
+            <div class="card">
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e3e3e3"
+                >
+                  <path
+                    d="M610-760q-21 0-35.5-14.5T560-810q0-21 14.5-35.5T610-860q21 0 35.5 14.5T660-810q0 21-14.5 35.5T610-760Zm0 660q-21 0-35.5-14.5T560-150q0-21 14.5-35.5T610-200q21 0 35.5 14.5T660-150q0 21-14.5 35.5T610-100Zm160-520q-21 0-35.5-14.5T720-670q0-21 14.5-35.5T770-720q21 0 35.5 14.5T820-670q0 21-14.5 35.5T770-620Zm0 380q-21 0-35.5-14.5T720-290q0-21 14.5-35.5T770-340q21 0 35.5 14.5T820-290q0 21-14.5 35.5T770-240Zm60-190q-21 0-35.5-14.5T780-480q0-21 14.5-35.5T830-530q21 0 35.5 14.5T880-480q0 21-14.5 35.5T830-430ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880v80q-134 0-227 93t-93 227q0 134 93 227t227 93v80Zm0-320q-33 0-56.5-23.5T400-480q0-5 .5-10.5T403-501l-83-83 56-56 83 83q4-1 21-3 33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Z"
+                  />
+                </svg>
+              </span>
+              <h3>Disponibilidade Total</h3>
+              <p>
+                Atendimento 24 horas por dia, 7 dias por semana, sem
+                interrupções. Estamos sempre prontos para você.
+              </p>
+            </div>
+            <div class="card">
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e3e3e3"
+                >
+                  <path
+                    d="M480-480Zm0 360q-18 0-34.5-6.5T416-146L148-415q-35-35-51.5-80T80-589q0-103 67-177t167-74q48 0 90.5 19t75.5 53q32-34 74.5-53t90.5-19q100 0 167.5 74T880-590q0 49-17 94t-51 80L543-146q-13 13-29 19.5t-34 6.5Zm40-520q10 0 19 5t14 13l68 102h166q7-17 10.5-34.5T801-590q-2-69-46-118.5T645-758q-31 0-59.5 12T536-711l-27 29q-5 6-13 9.5t-16 3.5q-8 0-16-3.5t-14-9.5l-27-29q-21-23-49-36t-60-13q-66 0-110 50.5T160-590q0 18 3 35.5t10 34.5h187q10 0 19 5t14 13l35 52 54-162q4-12 14.5-20t23.5-8Zm12 130-54 162q-4 12-15 20t-24 8q-10 0-19-5t-14-13l-68-102H236l237 237q2 2 3.5 2.5t3.5.5q2 0 3.5-.5t3.5-2.5l236-237H600q-10 0-19-5t-15-13l-34-52Z"
+                  />
+                </svg>
+              </span>
+              <h3>Cuidado Humanizado</h3>
+              <p>
+                Tratamos cada paciente com empatia, respeito e atenção
+                individualizada em momentos delicados.
+              </p>
+            </div>
+            <div class="card">
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e3e3e3"
+                >
+                  <path
+                    d="M480-160q75 0 127.5-52.5T660-340q0-75-52.5-127.5T480-520q-75 0-127.5 52.5T300-340q0 75 52.5 127.5T480-160ZM363-572q20-11 42.5-17.5T451-598L350-800H250l113 228Zm234 0 114-228H610l-85 170 19 38q14 4 27 8.5t26 11.5ZM256-208q-17-29-26.5-62.5T220-340q0-36 9.5-69.5T256-472q-42 14-69 49.5T160-340q0 47 27 82.5t69 49.5Zm448 0q42-14 69-49.5t27-82.5q0-47-27-82.5T704-472q17 29 26.5 62.5T740-340q0 36-9.5 69.5T704-208ZM480-80q-40 0-76.5-11.5T336-123q-9 2-18 2.5t-19 .5q-91 0-155-64T80-339q0-87 58-149t143-69L120-880h280l80 160 80-160h280L680-559q85 8 142.5 70T880-340q0 92-64 156t-156 64q-9 0-18.5-.5T623-123q-31 20-67 31.5T480-80Zm0-260ZM363-572 250-800l113 228Zm234 0 114-228-114 228ZM406-230l28-91-74-53h91l29-96 29 96h91l-74 53 28 91-74-56-74 56Z"
+                  />
+                </svg>
+              </span>
+              <h3>Excelência Técnica</h3>
+              <p>
+                Investimento contínuo em capacitação profissional e equipamentos
+                de última geração.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>footer</footer>
+
+    <footer>
+      <div class="container">huehue</div>
+    </footer>
   </body>
 </html>
