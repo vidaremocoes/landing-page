@@ -384,6 +384,28 @@ header {
   }
 }
 
+#gallery {
+  .gallery-wrapper {
+    display: grid;
+    gap: var(--p-sm);
+    grid-template-columns: 1fr 1fr;
+
+    .photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.4);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 #services,
 #structure {
   .content-area {
@@ -531,9 +553,19 @@ footer {
     }
   }
 
+  #gallery {
+    .gallery-wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .photo {
+        aspect-ratio: 4/3;
+      }
+    }
+  }
+
   footer {
     .footer-wrapper {
-      grid-template-columns: 1.5fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
       align-items: center;
       justify-content: center;
 
