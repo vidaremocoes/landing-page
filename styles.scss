@@ -55,6 +55,7 @@ h6 {
   --color-primary: #ff142b;
   --color-secondary: #f9d2d6;
   --color-tertiary: #7d383d;
+  --color-black: #000;
   --section-bg: #efefef;
 
   --p-xs: 1rem;
@@ -62,7 +63,7 @@ h6 {
   --p-lg: 4rem;
   --title-pos-neg: -2rem;
 
-  --font-xs: 1rem;
+  --font-xs: 1.4rem;
 
   @media screen and (min-width: 1024px) {
     --p-xs: 1.25rem;
@@ -70,7 +71,7 @@ h6 {
     --p-lg: 5rem;
     --title-pos-neg: -3rem;
 
-    --font-xs: 1.6rem;
+    --font-xs: 2rem;
   }
 }
 
@@ -223,7 +224,7 @@ header {
 
 /* componente item */
 .item {
-  color: var(--color-primary);
+  color: var(--color-black);
   display: grid;
   gap: 0.5rem;
 
@@ -273,10 +274,10 @@ header {
 
   .content-area {
     p {
-      color: var(--color-primary);
+      color: var(--color-black);
       font-weight: 400;
       letter-spacing: 0.1rem;
-      font-size: 1.2rem;
+      font-size: var(--font-xs);
 
       &:not(:last-child) {
         margin-bottom: var(--p-sm);
@@ -315,7 +316,7 @@ header {
     .number {
       color: $bg-light;
       font-weight: 700;
-      font-size: var(--font-xs);
+      font-size: 1rem;
     }
   }
 
@@ -559,7 +560,7 @@ footer {
       }
 
       .number {
-        font-size: var(--font-xs);
+        font-size: 1.6rem;
       }
     }
   }
@@ -614,5 +615,13 @@ footer {
 
   #structure .content-area {
     gap: var(--p-sm);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-wrapper {
+    padding-top: 36rem;
+    background-size: 1200px;
+    background-position: top center;
   }
 }
